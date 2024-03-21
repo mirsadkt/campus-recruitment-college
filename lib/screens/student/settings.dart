@@ -1,4 +1,4 @@
-// ignore_for_file: unused_import
+// ignore_for_file: unused_import, avoid_print, prefer_const_constructors
 
 import 'package:campus_recruitment/screens/student/first.dart';
 import 'package:campus_recruitment/screens/student/start.dart';
@@ -7,6 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart'
     show FirebaseMessaging, RemoteMessage;
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Settings extends StatefulWidget {
   const Settings({
@@ -87,30 +88,31 @@ class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: FutureBuilder(
           future: _loadStudentInfo(),
           builder: (context, snapshot) {
             return ListView(
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(top: 125.0, left: 10),
+                Padding(
+                  padding: EdgeInsets.only(top: 100.0, left: 10),
                   child: Text(
                     "Settings",
-                    style: TextStyle(
+                    style: GoogleFonts.poppins(
                       color: Colors.black,
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 50.0),
+                Padding(
+                  padding: EdgeInsets.only(top: 50.0, left: 10, bottom: 15),
                   child: Text(
                     "Account",
-                    style: TextStyle(
+                    style: GoogleFonts.poppins(
                       color: Colors.black45,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
@@ -118,11 +120,11 @@ class _SettingsState extends State<Settings> {
                   decoration: const BoxDecoration(
                     border: Border(
                       top: BorderSide(
-                        color: Colors.grey,
+                        color: Color.fromARGB(255, 211, 209, 209),
                         width: 1.0,
                       ),
                       bottom: BorderSide(
-                        color: Colors.grey,
+                        color: Color.fromARGB(255, 211, 209, 209),
                         width: 1.0,
                       ),
                     ),
@@ -137,21 +139,22 @@ class _SettingsState extends State<Settings> {
                     subtitle: Text(_auth.currentUser?.email ?? ''),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 60.0),
+                Padding(
+                  padding: EdgeInsets.only(top: 50.0, left: 13, bottom: 10),
                   child: Text(
                     "General",
-                    style: TextStyle(
+                    style: GoogleFonts.poppins(
                       color: Colors.black45,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
                 Card(
-                  color: Colors.white,
+                  color: Color.fromARGB(255, 255, 255, 255),
                   child: ListTile(
-                    title: const Text("Notification"),
+                    title: Text("Notification",
+                    ),
                     leading: const Icon(Icons.notifications,
                         color: Colors.blue, size: 30),
                     trailing: Transform.scale(

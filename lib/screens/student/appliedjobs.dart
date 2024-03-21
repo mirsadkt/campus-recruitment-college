@@ -1,8 +1,9 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, prefer_const_constructors
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppliedJobs extends StatefulWidget {
   const AppliedJobs({Key? key}) : super(key: key);
@@ -40,18 +41,18 @@ class _AppliedJobsState extends State<AppliedJobs> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          bottom: const TabBar(
+          bottom: TabBar(
             tabs: [
               Tab(
                 child: Text(
                   "All Jobs",
-                  style: TextStyle(color: Colors.blue),
+                  style: GoogleFonts.poppins(color: Colors.blue),
                 ),
               ),
               Tab(
                 child: Text(
                   "Completed",
-                  style: TextStyle(color: Colors.blue),
+                  style: GoogleFonts.poppins(color: Colors.blue),
                 ),
               ),
             ],
@@ -59,9 +60,9 @@ class _AppliedJobsState extends State<AppliedJobs> {
             indicatorSize: TabBarIndicatorSize.tab,
             indicatorWeight: 5,
           ),
-          title: const Text(
+          title: Text(
             "Applied Jobs",
-            style: TextStyle(color: Colors.black),
+            style: GoogleFonts.poppins(color: Colors.black, fontSize:20),
           ),
           centerTitle: true,
           backgroundColor: Colors.white,

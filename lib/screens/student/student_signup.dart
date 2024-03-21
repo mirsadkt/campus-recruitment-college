@@ -1,4 +1,4 @@
-// ignore_for_file: unused_import
+// ignore_for_file: unused_import, use_build_context_synchronously, avoid_print, unused_element, prefer_const_constructors
 
 import 'package:campus_recruitment/screens/student/bottom%20navigation.dart';
 import 'package:campus_recruitment/screens/student/studentlogin.dart';
@@ -8,6 +8,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -196,6 +197,7 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.only(top: 150.0, left: 15, right: 15),
@@ -217,7 +219,7 @@ class _SignUpState extends State<SignUp> {
                               ),
                               child: TextFormField(
                                 controller: nameController,
-                                decoration: const InputDecoration(
+                                decoration: InputDecoration(
                                   hintText: "First Name",
                                   contentPadding: EdgeInsets.all(12.0),
                                   border: InputBorder.none,
@@ -257,6 +259,7 @@ class _SignUpState extends State<SignUp> {
                             ),
                           ),
                         ),
+                        
                       ],
                     ),
                     Padding(
@@ -443,15 +446,18 @@ class _SignUpState extends State<SignUp> {
                             });
                           },
                         ),
-                        const Text(
+                         Text(
                           'I agree to the ',
-                          style: TextStyle(color: Colors.black, fontSize: 16),
+                          style: GoogleFonts.poppins(color: Colors.black, fontSize: 13),
                         ),
-                        const Text(
+                         Text(
                           'terms and privacy policy',
-                          style: TextStyle(color: Colors.blue, fontSize: 16),
+                          style: GoogleFonts.poppins(color: Colors.blue, fontSize: 13),
                         ),
                       ],
+                    ),
+                    SizedBox(
+                      height: 17,
                     ),
                     ElevatedButton(
                       onPressed: () {
@@ -462,44 +468,45 @@ class _SignUpState extends State<SignUp> {
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue,
-                        minimumSize: const Size(double.infinity, 50),
-                        textStyle: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+                        minimumSize: Size(250, 50),
+                        textStyle: GoogleFonts.poppins(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w400,
                         ),
                       ),
-                      child: const Text(
+                      child: Text(
                         "Proceed",
-                        style: TextStyle(fontSize: 20, color: Colors.white),
+                        style: GoogleFonts.poppins(fontSize: 15, color: Colors.white),
                       ),
                     ),
                     const SizedBox(
                       width: 15,
+                      height: 20,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Padding(
+                        Padding(
                           padding: EdgeInsets.all(10.0),
                           child: Text(
                             "Already have an Account? ",
                             style:
-                                TextStyle(color: Colors.black, fontSize: 10.0),
+                                GoogleFonts.poppins(color: Colors.black, fontSize: 13.0),
                           ),
                         ),
                         const SizedBox(
-                          width: 15.0,
+                          width: 7.0,
                         ),
                         GestureDetector(
                           onTap: () {
                             Navigator.of(context).pop();
                           },
-                          child: const Text(
-                            " login",
-                            style: TextStyle(
+                          child: Text(
+                            " Login",
+                            style: GoogleFonts.poppins(
                                 color: Colors.blue,
-                                fontSize: 15.0,
-                                fontWeight: FontWeight.bold),
+                                fontSize: 13.0,
+                                fontWeight: FontWeight.w600),
                           ),
                         ),
                       ],

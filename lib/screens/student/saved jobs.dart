@@ -1,7 +1,9 @@
-// ignore_for_file: file_names, library_private_types_in_public_api, avoid_print, unused_local_variable
+// ignore_for_file: file_names, library_private_types_in_public_api, avoid_print, unused_local_variable, prefer_const_constructors
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SavedJobs extends StatefulWidget {
   const SavedJobs({
@@ -50,8 +52,11 @@ class _SavedJobsState extends State<SavedJobs> {
                       child: CircularProgressIndicator(),
                     )
                   : savedJobsList.isEmpty
-                      ? const Center(
-                          child: Text('No Saved jobs'),
+                      ? Center(
+                          child: Text('No Saved jobs',
+                          style: GoogleFonts.poppins(
+                            fontWeight:FontWeight.w400
+                          ),),
                         )
                       : ListView.builder(
                           itemCount: savedJobsList.length,

@@ -1,8 +1,9 @@
-// ignore_for_file: prefer_final_fields, unused_field
+// ignore_for_file: prefer_final_fields, unused_field, prefer_const_constructors, prefer_interpolation_to_compose_strings, avoid_print
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'jobview1.dart';
 
@@ -48,6 +49,7 @@ class _JobListingState extends State<JobListing> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: Padding(
@@ -64,25 +66,31 @@ class _JobListingState extends State<JobListing> {
               }),
         ),
         actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.search, color: Colors.blue),
-            onPressed: () {
-              // Handle search action
-              showSearch(context: context, delegate: JobSearch(_firestore));
-            },
+          Padding(
+            padding: EdgeInsets.only(right: 15),
+            child: IconButton(
+              icon: Icon(Icons.search, color: Colors.blue,size: 28,),
+              onPressed: () {
+                // Handle search action
+                showSearch(context: context, delegate: JobSearch(_firestore));
+              },
+            ),
           ),
         ],
       ),
       body: Column(
         children: [
-          const Padding(
+          SizedBox(
+            height: 13,
+          ),
+           Padding(
             padding: EdgeInsets.all(16.0),
             child: Text(
               "Find your Dream job today",
-              style: TextStyle(
+              style: GoogleFonts.poppins(
                 color: Colors.black,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
               ),
             ),
           ),
@@ -98,7 +106,8 @@ class _JobListingState extends State<JobListing> {
 
                 return jobList.isEmpty
                     ? const Center(
-                        child: Text('No Jobs Found'),
+                        child: Text('No Jobs Found',
+                        ),
                       )
                     : ListView.builder(
                         itemCount: jobList.length,

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,10 +18,14 @@ class _GetstartedState extends State<Getstarted> {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Colors.white,
         body: SingleChildScrollView(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          SizedBox(
+            height: 20,
+          ),
           Padding(
             padding: const EdgeInsets.all(25.0),
             child: SizedBox(
@@ -28,16 +34,18 @@ class _GetstartedState extends State<Getstarted> {
               child: Image.asset('assets/get started .png'),
             ),
           ),
-          const Text(
+           Text(
             'Welcome',
-            style: TextStyle(fontSize: 40),
+            style: GoogleFonts.poppins(
+              fontSize: 25,
+              ),
           ),
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Text(
               'Get Hired with ease using our App',
-              style: GoogleFonts.aBeeZee(
-                fontSize: 18,
+              style: GoogleFonts.poppins(
+                fontSize: 15,
               ),
             ),
           ),
@@ -47,8 +55,8 @@ class _GetstartedState extends State<Getstarted> {
               child: Text(
                 'Take the First step towards your dream with our app',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.aBeeZee(
-                  fontSize: 18,
+                style: GoogleFonts.poppins(
+                  fontSize: 14,
                 ),
               ),
             ),
@@ -88,12 +96,12 @@ class _GetstartedState extends State<Getstarted> {
                       ),
                       width: screenWidth * 0.50,
                       height: 50,
-                      child: const Center(
+                      child: Center(
                         child: Text(
                           'Find your job',
-                          style: TextStyle(
+                          style: GoogleFonts.poppins(
                             color: Colors.white,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
                       ),

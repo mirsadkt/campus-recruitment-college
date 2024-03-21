@@ -1,4 +1,4 @@
-// ignore_for_file: unused_import, use_key_in_widget_constructors, avoid_print
+// ignore_for_file: unused_import, use_key_in_widget_constructors, avoid_print, prefer_const_constructors
 
 import 'package:campus_recruitment/screens/student/job application.dart';
 import 'package:campus_recruitment/screens/student/notificaiton.dart';
@@ -6,6 +6,7 @@ import 'package:campus_recruitment/screens/student/saved%20jobs.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StudentHome extends StatefulWidget {
   const StudentHome({Key? key});
@@ -60,6 +61,7 @@ class _StudentHomeState extends State<StudentHome> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: FutureBuilder(
           future: fetchUsers(),
           builder: (context, snapshot) {
@@ -91,36 +93,40 @@ class _StudentHomeState extends State<StudentHome> {
                                         radius: 25,
                                       ),
                                       Padding(
-                                        padding: const EdgeInsets.all(15.0),
+                                        padding: EdgeInsets.all(15.0),
                                         child: Text(
                                           'Welcome',
-                                          style: TextStyle(
+                                          style: GoogleFonts.poppins(
                                             fontSize: constraints.maxWidth > 600
                                                 ? 30
                                                 : 20,
-                                            fontWeight: FontWeight.bold,
+                                            fontWeight: FontWeight.w500,
                                           ),
                                         ),
                                       ),
                                       const Spacer(),
-                                      IconButton(
-                                        icon: const Icon(
-                                          Icons.save,
-                                          color: Colors.blue,
-                                        ),
-                                        onPressed: () {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => SavedJobs(
-                                                savedJobs: savedJobs,
-                                                userid: userid,
-                                                userEmail: userEmail,
-                                                userName: userName,
+                                      Padding(
+                                        padding: EdgeInsets.only(right: 20),
+                                        child: IconButton(
+                                          icon: Icon(
+                                            Icons.bookmark_border,
+                                            color: Colors.blue,
+                                            size: 25,
+                                          ),
+                                          onPressed: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) => SavedJobs(
+                                                  savedJobs: savedJobs,
+                                                  userid: userid,
+                                                  userEmail: userEmail,
+                                                  userName: userName,
+                                                ),
                                               ),
-                                            ),
-                                          );
-                                        },
+                                            );
+                                          },
+                                        ),
                                       ),
                                       // IconButton(
                                       //   icon: const Icon(
@@ -192,13 +198,16 @@ class _StudentHomeState extends State<StudentHome> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text(
-                                        'Recommendation',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.normal,
-                                          fontSize: constraints.maxWidth > 600
-                                              ? 25
-                                              : 20,
+                                      Padding(
+                                        padding: EdgeInsets.only(top: 15),
+                                        child: Text(
+                                          'Recommendation',
+                                          style: GoogleFonts.poppins(
+                                            fontWeight: FontWeight.normal,
+                                            fontSize: constraints.maxWidth > 600
+                                                ? 24
+                                                : 19,
+                                          ),
                                         ),
                                       ),
                                       // Padding(
@@ -298,20 +307,21 @@ class _StudentHomeState extends State<StudentHome> {
                                                                       job['companyname'] ??
                                                                           'Unknown',
                                                                       style:
-                                                                          TextStyle(
+                                                                          GoogleFonts.poppins(
                                                                         fontSize: constraints.maxWidth >
                                                                                 600
                                                                             ? 25
                                                                             : 20,
                                                                         fontWeight:
-                                                                            FontWeight.bold,
+                                                                            FontWeight.w500,
                                                                       ),
                                                                     ),
                                                                     Text(
                                                                       job['address'] ??
                                                                           'Unknown',
-                                                                          maxLines: 2,
-                                                                      style: const TextStyle(
+                                                                      maxLines:
+                                                                          2,
+                                                                      style: TextStyle(
                                                                           overflow:
                                                                               TextOverflow.ellipsis),
                                                                     ),
@@ -323,8 +333,8 @@ class _StudentHomeState extends State<StudentHome> {
                                                                           Text(
                                                                         job['jobTitle'] ??
                                                                             'Unknown',
-                                                                        style:
-                                                                            TextStyle(
+                                                                        style: GoogleFonts
+                                                                            .poppins(
                                                                           fontSize: constraints.maxWidth > 600
                                                                               ? 20
                                                                               : 16,
@@ -427,10 +437,10 @@ class _StudentHomeState extends State<StudentHome> {
                                                                         'position'] ??
                                                                     'Unknown'),
                                                               ),
-                                                              const Text(
+                                                               Text(
                                                                 '•',
                                                                 style:
-                                                                    TextStyle(
+                                                                    GoogleFonts.poppins(
                                                                   color: Colors
                                                                       .blue,
                                                                   fontWeight:
@@ -441,10 +451,10 @@ class _StudentHomeState extends State<StudentHome> {
                                                               Text(job[
                                                                       'category'] ??
                                                                   'Unknown'),
-                                                              const Text(
+                                                               Text(
                                                                 '•',
                                                                 style:
-                                                                    TextStyle(
+                                                                    GoogleFonts.poppins(
                                                                   color: Colors
                                                                       .blue,
                                                                   fontWeight:
@@ -511,9 +521,10 @@ class _StudentHomeState extends State<StudentHome> {
                                                                     Colors.blue,
                                                                 // primary: Colors
                                                                 //     .white,
+                                                                foregroundColor: Colors.white
                                                               ),
-                                                              child: const Text(
-                                                                  'Apply Now'),
+                                                              child: Text(
+                                                                  'Apply Now',),
                                                             ),
                                                           ),
                                                         ],
@@ -532,13 +543,16 @@ class _StudentHomeState extends State<StudentHome> {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text(
-                                        'Events',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.normal,
-                                          fontSize: constraints.maxWidth > 600
-                                              ? 30
-                                              : 25,
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 5,top: 15),
+                                        child: Text(
+                                          'Events',
+                                          style: GoogleFonts.poppins(
+                                            fontWeight: FontWeight.normal,
+                                            fontSize: constraints.maxWidth > 600
+                                                ? 24
+                                                : 19,
+                                          ),
                                         ),
                                       ),
                                       // Text(

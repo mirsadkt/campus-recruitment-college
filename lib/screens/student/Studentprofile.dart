@@ -1,4 +1,6 @@
-// ignore_for_file: unused_import, unused_field
+// ignore_for_file: unused_import, unused_field, avoid_print, prefer_const_constructors
+
+import 'dart:ui';
 
 import 'package:campus_recruitment/screens/student/appliedjobs.dart';
 import 'package:campus_recruitment/screens/student/personaldetails.dart';
@@ -11,6 +13,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StudentProfile extends StatefulWidget {
   const StudentProfile({Key? key}) : super(key: key);
@@ -84,16 +88,18 @@ class _StudentProfileState extends State<StudentProfile> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                const Padding(
-                                  padding: EdgeInsets.all(25.0),
+                               Padding(
+                                  padding: EdgeInsets.only(left: 20,top: 10),
                                   child: Text(
                                     'Profile',
-                                    style: TextStyle(
-                                        fontSize: 30, color: Colors.white),
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 30, color: Colors.white,
+                                        fontWeight:FontWeight.w500
+                                        ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.only(right: 25,top: 10),
                                   child: CircleAvatar(
                                     backgroundColor: Colors.white38,
                                     child: IconButton(
@@ -110,9 +116,10 @@ class _StudentProfileState extends State<StudentProfile> {
                                           }
                                         });
                                       },
-                                      icon: const Icon(
+                                      icon: Icon(
                                         Icons.edit,
                                         color: Colors.white,
+                                        size: 18,
                                       ),
                                     ),
                                   ),
@@ -144,8 +151,8 @@ class _StudentProfileState extends State<StudentProfile> {
                                         ),
                                       );
                                     },
-                                    child: const Card(
-                                      color: Color(0xFFD3D3D3),
+                                    child: Card(
+                                      color: Color.fromARGB(255, 255, 255, 255),
                                       child: ListTile(
                                         leading: Icon(
                                           Icons.star_outline_outlined,
@@ -153,7 +160,11 @@ class _StudentProfileState extends State<StudentProfile> {
                                         ),
                                         title: Text(
                                           'Personal Details',
-                                          textScaleFactor: 1.5,
+                                          style: GoogleFonts.poppins(
+                                            fontSize:15,
+                                            color:Colors.black,
+                                            fontWeight:FontWeight.w500
+                                          ),
                                         ),
                                         trailing: Icon(
                                           Icons.keyboard_arrow_right,
@@ -173,8 +184,8 @@ class _StudentProfileState extends State<StudentProfile> {
                                         ),
                                       );
                                     },
-                                    child: const Card(
-                                      color: Color(0xFFD3D3D3),
+                                    child: Card(
+                                      color: Color.fromARGB(255, 255, 255, 255),
                                       child: ListTile(
                                         leading: Icon(
                                           Icons.shopping_bag_rounded,
@@ -182,7 +193,11 @@ class _StudentProfileState extends State<StudentProfile> {
                                         ),
                                         title: Text(
                                           'Qualification',
-                                          textScaleFactor: 1.5,
+                                          style: GoogleFonts.poppins(
+                                            fontSize:15,
+                                            color:Colors.black,
+                                            fontWeight:FontWeight.w500
+                                          ),
                                         ),
                                         trailing: Icon(
                                           Icons.keyboard_arrow_right,
@@ -201,8 +216,8 @@ class _StudentProfileState extends State<StudentProfile> {
                                         ),
                                       );
                                     },
-                                    child: const Card(
-                                      color: Color(0xFFD3D3D3),
+                                    child:  Card(
+                                      color: Color.fromARGB(255, 255, 255, 255),
                                       child: ListTile(
                                         leading: Icon(
                                           Icons.pie_chart,
@@ -210,7 +225,11 @@ class _StudentProfileState extends State<StudentProfile> {
                                         ),
                                         title: Text(
                                           'Skills',
-                                          textScaleFactor: 1.5,
+                                          style: GoogleFonts.poppins(
+                                            fontSize:15,
+                                            color:Colors.black,
+                                            fontWeight:FontWeight.w500
+                                          ),
                                         ),
                                         trailing: Icon(
                                           Icons.keyboard_arrow_right,
@@ -262,8 +281,8 @@ class _StudentProfileState extends State<StudentProfile> {
                                         ),
                                       );
                                     },
-                                    child: const Card(
-                                      color: Color(0xFFD3D3D3),
+                                    child: Card(
+                                      color: Color.fromARGB(255, 255, 255, 255),
                                       child: ListTile(
                                         leading: Icon(
                                           Icons.compass_calibration_outlined,
@@ -271,7 +290,12 @@ class _StudentProfileState extends State<StudentProfile> {
                                         ),
                                         title: Text(
                                           'View Applied jobs',
-                                          textScaleFactor: 1.5,
+                                          style: GoogleFonts.poppins(
+                                            fontSize:15,
+                                            color:Colors.black,
+                                            fontWeight:FontWeight.w500
+                                          ),
+                                          
                                         ),
                                         trailing: Icon(
                                           Icons.keyboard_arrow_right,
@@ -285,14 +309,18 @@ class _StudentProfileState extends State<StudentProfile> {
                                     onTap: () {
                                       _logout(context);
                                     },
-                                    child: const Card(
-                                      color: Color(0xFFD3D3D3),
+                                    child: Card(
+                                      color: Color.fromARGB(255, 255, 255, 255),
                                       child: ListTile(
                                         leading: Icon(Icons.logout,
                                             color: Colors.blue, size: 30),
                                         title: Text(
                                           "Logout",
-                                          textScaleFactor: 1.5,
+                                          style: GoogleFonts.poppins(
+                                            fontSize:15,
+                                            color:Colors.black,
+                                            fontWeight:FontWeight.w500
+                                          ),
                                         ),
                                         trailing: Icon(
                                           Icons.keyboard_arrow_right,

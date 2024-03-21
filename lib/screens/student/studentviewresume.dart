@@ -1,5 +1,9 @@
+// ignore_for_file: prefer_const_constructors, avoid_print
+
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class StudentViewResume extends StatelessWidget {
@@ -40,7 +44,10 @@ class StudentViewResume extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Download Resume'),
+        title: Text('Download Resume',
+        style: GoogleFonts.poppins(
+          fontWeight:FontWeight.w400
+        ),),
       ),
       body: Center(
         child: ElevatedButton(

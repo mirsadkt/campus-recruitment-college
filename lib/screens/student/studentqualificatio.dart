@@ -1,8 +1,10 @@
-// ignore_for_file: unused_field
+// ignore_for_file: unused_field, avoid_print, prefer_const_constructors
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StudentQualification extends StatefulWidget {
   const StudentQualification({super.key});
@@ -65,7 +67,10 @@ class _StudentQualificationState extends State<StudentQualification> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('View qualification'),
+        title: Text('View qualification',
+        style: GoogleFonts.poppins(
+          fontWeight:FontWeight.w400
+        ),),
       ),
       body: _buildSkillsList(),
     );
@@ -73,19 +78,19 @@ class _StudentQualificationState extends State<StudentQualification> {
 
   Widget _buildSkillsList() {
     return Padding(
-      padding: const EdgeInsets.only(top: 8.0),
+      padding: const EdgeInsets.only(top: 20.0),
       child: ListView.builder(
         itemCount: _qualification.length,
         itemBuilder: (context, index) {
           return ListTile(
             title: Text(
               _qualification[index],
-              style: const TextStyle(
+              style: GoogleFonts.poppins(
                 fontSize: 16,
                 decoration: TextDecoration.none,
               ),
             ),
-            leading: const Icon(
+            leading: Icon(
               Icons.fiber_manual_record,
               size: 20,
             ),

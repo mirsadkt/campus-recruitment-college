@@ -1,6 +1,9 @@
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors
+
 import 'package:campus_recruitment/screens/admin/adminlogin.dart';
 import 'package:campus_recruitment/screens/company/welcome.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'get started.dart';
 
@@ -10,7 +13,9 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: const Color(0xFF3F6CDF), // #3F6CDF
         actions: [
           TextButton(
@@ -22,9 +27,9 @@ class LandingPage extends StatelessWidget {
                 ),
               );
             },
-            child: const Text(
+            child: Text(
               'Administrator Login',
-              style: TextStyle(color: Colors.white),
+              style: GoogleFonts.poppins(color: Colors.white),          
             ),
           ),
           const SizedBox(width: 16), // Adjust the spacing as needed
@@ -80,10 +85,10 @@ class LandingPage extends StatelessWidget {
                         ),
                         width: screenWidth * 0.35,
                         height: 40,
-                        child: const Center(
+                        child:  Center(
                           child: Text(
                             'Student Log in',
-                            style: TextStyle(
+                            style: GoogleFonts.poppins(
                               color: Colors.white,
                               fontWeight: FontWeight.w500,
                             ),
@@ -120,10 +125,10 @@ class LandingPage extends StatelessWidget {
                         ),
                         width: screenWidth * 0.35,
                         height: 40,
-                        child: const Center(
+                        child: Center(
                           child: Text(
                             'Company Log in',
-                            style: TextStyle(
+                            style: GoogleFonts.poppins(
                               color: Colors.white,
                               fontWeight: FontWeight.w500,
                             ),

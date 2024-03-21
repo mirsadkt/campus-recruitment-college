@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:campus_recruitment/screens/student/Studentprofile.dart';
 import 'package:campus_recruitment/screens/student/joblisting.dart';
 import 'package:campus_recruitment/screens/student/settings.dart';
@@ -29,7 +31,7 @@ class _StudentBottomNavigationState extends State<StudentBottomNavigation> {
       body: pages[currentIndex],
       bottomNavigationBar: BottomAppBar(
         color: Colors.white,
-        shape: const CircularNotchedRectangle(),
+        shape: CircularNotchedRectangle(),
         notchMargin: 8.0, // Adjust the notch margin as needed
         child: SizedBox(
           height: 60.0, // Increase the height of the BottomAppBar

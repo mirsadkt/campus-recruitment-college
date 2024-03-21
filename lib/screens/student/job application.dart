@@ -1,4 +1,4 @@
-// ignore_for_file: unused_import, file_names
+// ignore_for_file: unused_import, file_names, use_build_context_synchronously
 
 import 'dart:io';
 
@@ -22,7 +22,7 @@ class JobApplication extends StatefulWidget {
   final String userGender;
   final String userSkills;
   final String cgpa;
-  final String proPicUrl;
+  final String? proPicUrl;
 
   const JobApplication({
     Key? key,
@@ -38,7 +38,7 @@ class JobApplication extends StatefulWidget {
     required this.userGender,
     required this.userSkills,
     required this.cgpa,
-    required this.proPicUrl,
+     this.proPicUrl,
   }) : super(key: key);
 
   @override

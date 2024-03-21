@@ -1,4 +1,4 @@
-// ignore_for_file: unused_import, prefer_final_fields
+// ignore_for_file: unused_import, prefer_final_fields, avoid_print, prefer_const_constructors, use_build_context_synchronously
 
 import 'dart:io';
 
@@ -8,6 +8,8 @@ import 'package:file_picker/file_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 
 class StudentProfile2 extends StatefulWidget {
@@ -352,13 +354,18 @@ class _StudentProfile2State extends State<StudentProfile2> {
                                 // ),
                               ],
                             ),
-                          const  SizedBox(height: 20,),
+                      SizedBox(height: 20,width: 150,),
                             ElevatedButton(
                               onPressed: () async {
                                 await _updateUserDetails();
                                 Navigator.of(context).pop(true);
                               },
-                              child: const Text('Done'),
+                              child: Text('Done',
+                              style: GoogleFonts.poppins(
+                                fontWeight:FontWeight.w400,
+                                fontSize:14,
+                                color:Colors.black
+                              ),),
                             ),
                           ],
                         ),

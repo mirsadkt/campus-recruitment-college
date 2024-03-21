@@ -1,8 +1,11 @@
-// ignore_for_file: unused_field
+// ignore_for_file: unused_field, prefer_const_constructors, avoid_print, library_private_types_in_public_api
+
+import 'dart:ui';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ViewSkill extends StatefulWidget {
   const ViewSkill({super.key});
@@ -64,7 +67,10 @@ class _ViewSkillState extends State<ViewSkill> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('View Skills'),
+        title: Text('View Skills',
+        style: GoogleFonts.poppins(
+          fontWeight:FontWeight.w400
+        ),),
       ),
       body: _buildSkillsList(),
     );
@@ -72,14 +78,14 @@ class _ViewSkillState extends State<ViewSkill> {
 
   Widget _buildSkillsList() {
     return Padding(
-      padding: const EdgeInsets.only(top: 8.0),
+      padding: const EdgeInsets.only(top: 20.0),
       child: ListView.builder(
         itemCount: _skills.length,
         itemBuilder: (context, index) {
           return ListTile(
             title: Text(
               _skills[index],
-              style: const TextStyle(
+              style: GoogleFonts.poppins(
                 fontSize: 16,
                 decoration: TextDecoration.none,
               ),

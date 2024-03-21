@@ -1,10 +1,11 @@
-// ignore_for_file: unused_field, unused_local_variable
+// ignore_for_file: unused_field, unused_local_variable, prefer_const_constructors, avoid_print
 
 import 'package:campus_recruitment/screens/student/bottom%20navigation.dart';
 import 'package:campus_recruitment/screens/student/student_signup.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StudentLogIn extends StatefulWidget {
   const StudentLogIn({Key? key}) : super(key: key);
@@ -23,6 +24,7 @@ class _StudentLogInState extends State<StudentLogIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -39,7 +41,7 @@ class _StudentLogInState extends State<StudentLogIn> {
                     height: MediaQuery.of(context).size.height / 2.9,
                   ),
                   const SizedBox(
-                    height: 70.0,
+                    height: 25.0,
                   ),
                   Container(
                     padding: const EdgeInsets.symmetric(vertical: 3.0),
@@ -55,16 +57,18 @@ class _StudentLogInState extends State<StudentLogIn> {
                         }
                         return null;
                       },
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(13)
+                        ),
                         hintText: 'Email',
-                        hintStyle: TextStyle(color: Colors.black),
+                        hintStyle: GoogleFonts.poppins(color: Colors.black),
                       ),
-                      style: const TextStyle(color: Colors.black),
+                      style: GoogleFonts.poppins(color: Colors.black),
                     ),
                   ),
                   const SizedBox(
-                    height: 10.0,
+                    height: 12.0,
                   ),
                   Container(
                     padding: const EdgeInsets.symmetric(vertical: 3.0),
@@ -81,9 +85,11 @@ class _StudentLogInState extends State<StudentLogIn> {
                         return null;
                       },
                       decoration: InputDecoration(
-                        border: const OutlineInputBorder(),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(13)
+                        ),
                         hintText: 'Password',
-                        hintStyle: const TextStyle(color: Colors.black),
+                        hintStyle: GoogleFonts.poppins(color: Colors.black),
                         suffixIcon: GestureDetector(
                           onTap: () {
                             setState(() {
@@ -98,7 +104,7 @@ class _StudentLogInState extends State<StudentLogIn> {
                           ),
                         ),
                       ),
-                      style: const TextStyle(color: Colors.black),
+                      style:  GoogleFonts.poppins(color: Colors.black),
                       obscureText: obscurePassword,
                       maxLength: 10,
                     ),
@@ -118,20 +124,20 @@ class _StudentLogInState extends State<StudentLogIn> {
                     },
                     child: Center(
                       child: Container(
-                        width: 360,
-                        height: 55,
+                        width: 330,
+                        height: 50,
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           color: Colors.blue,
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(12),
                         ),
-                        child: const Center(
+                        child: Center(
                           child: Text(
                             "Login",
-                            style: TextStyle(
+                            style: GoogleFonts.poppins(
                               color: Colors.white,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                         ),
@@ -139,36 +145,38 @@ class _StudentLogInState extends State<StudentLogIn> {
                     ),
                   ),
                   const SizedBox(
-                    height: 15.0,
+                    height: 17.0,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Padding(
+                       Padding(
                         padding: EdgeInsets.all(10.0),
                         child: Text(
                           "Don't have an Account? Create one using",
-                          style: TextStyle(color: Colors.black, fontSize: 10.0),
+                          style: GoogleFonts.poppins(color: Colors.black, fontSize: 12.0),
                         ),
                       ),
                       const SizedBox(
-                        width: 5.0,
+                        width: 4.0,
                       ),
                       GestureDetector(
                         onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const SignUp(),
+                              builder: (context) => SignUp(),
                             ),
                           );
                         },
-                        child: const Text(
+                        child: Text(
                           "Signup",
-                          style: TextStyle(
+                          style: GoogleFonts.poppins(
                               color: Colors.blue,
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.bold),
+                              fontSize: 13.0,
+                              fontWeight: FontWeight.w500,
+                              
+                              ),
                         ),
                       ),
                     ],
